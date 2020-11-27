@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<feed xmlns="http://www.w3.org/2005/Atom" >
+  <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
+  <link href="http://localhost:4000/tag/paperimplement/feed.xml" rel="self" type="application/atom+xml" />
+  <link href="http://localhost:4000/" rel="alternate" type="text/html" />
+  <updated>2020-11-27T21:34:31+09:00</updated>
+  <id>http://localhost:4000/tag/paperimplement/feed.xml</id>
+
+  
+  
+  
+
+  
+    <title type="html">DL&amp;amp;NLP | </title>
+  
+
+  
+    <subtitle>딥러닝과 NLP 논문 공부, 구현 블로그</subtitle>
+  
+
+  
+
+  
+    
+      
+    
+  
+
+  
+  
+
+  
+    <entry>
+      <title type="html">논문 구현 샘플</title>
+      <link href="http://localhost:4000/paperimpl_sample" rel="alternate" type="text/html" title="논문 구현 샘플" />
+      <published>1863-11-28T00:16:00+09:00</published>
+      <updated>1863-11-28T00:16:00+09:00</updated>
+      <id>http://localhost:4000/paperimpl_sample</id>
+      <content type="html" xml:base="http://localhost:4000/paperimpl_sample">&lt;p&gt;이 글은 python basic 입니다.!!&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>DongHee Youn</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="PaperImplement" />
+      
+
+      
+        <summary type="html">이 글은 python basic 입니다.!!</summary>
+      
+
+      
+      
+    </entry>
+  
+</feed>
