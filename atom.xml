@@ -49,19 +49,5 @@
       </item>
       
     
-      
-      <item>
-        <title>자연어 처리 기본(1) 콜세라 강의 1 리뷰</title>
-        
-          <description>&lt;p&gt;이 글은 Jekyll basic 입니다.!!&lt;/p&gt;
-</description>
-        
-        <pubDate>Sat, 28 Nov 1863 00:10:00 +0900</pubDate>
-        <link>
-        http://localhost:4000/nlp_basic_1</link>
-        <guid isPermaLink="true">http://localhost:4000/nlp_basic_1</guid>
-      </item>
-      
-    
   </channel>
 </rss>

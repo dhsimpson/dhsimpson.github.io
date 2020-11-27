@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="http://localhost:4000/author/dhsimpson/feed.xml" rel="self" type="application/atom+xml" />
   <link href="http://localhost:4000/" rel="alternate" type="text/html" />
-  <updated>2020-11-27T21:34:31+09:00</updated>
+  <updated>2020-11-27T23:08:38+09:00</updated>
   <id>http://localhost:4000/author/dhsimpson/feed.xml</id>
 
   
@@ -209,40 +209,6 @@ time step t 에선 a&lt;sup&gt;&amp;lt;t-1&amp;gt;&lt;/sup&gt;와 Waa, x&lt;sup&
 
       
         <summary type="html">배경 지식이 있는 상태에서 수업을 들으면 더 잘 이해가 되지 않을까 싶어 요약본을 만들어 봤습니다.</summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">자연어 처리 기본(1) 콜세라 강의 1 리뷰</title>
-      <link href="http://localhost:4000/nlp_basic_1" rel="alternate" type="text/html" title="자연어 처리 기본(1) 콜세라 강의 1 리뷰" />
-      <published>1863-11-28T00:10:00+09:00</published>
-      <updated>1863-11-28T00:10:00+09:00</updated>
-      <id>http://localhost:4000/nlp_basic_1</id>
-      <content type="html" xml:base="http://localhost:4000/nlp_basic_1">&lt;p&gt;이 글은 Jekyll basic 입니다.!!&lt;/p&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>DongHee Youn</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="NlpBasics" />
-      
-
-      
-        <summary type="html">이 글은 Jekyll basic 입니다.!!</summary>
       
 
       
