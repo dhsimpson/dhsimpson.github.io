@@ -2,10 +2,10 @@
 
 <feed xmlns="http://www.w3.org/2005/Atom" >
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
-  <link href="http://localhost:4000/tag/paperimplement/feed.xml" rel="self" type="application/atom+xml" />
-  <link href="http://localhost:4000/" rel="alternate" type="text/html" />
-  <updated>2020-11-27T23:08:38+09:00</updated>
-  <id>http://localhost:4000/tag/paperimplement/feed.xml</id>
+  <link href="https://dhsimpson.github.io/tag/paperimplement/feed.xml" rel="self" type="application/atom+xml" />
+  <link href="https://dhsimpson.github.io/" rel="alternate" type="text/html" />
+  <updated>2020-11-30T02:49:30+09:00</updated>
+  <id>https://dhsimpson.github.io/tag/paperimplement/feed.xml</id>
 
   
   
@@ -33,11 +33,11 @@
   
     <entry>
       <title type="html">논문 구현 샘플</title>
-      <link href="http://localhost:4000/paperimpl_sample" rel="alternate" type="text/html" title="논문 구현 샘플" />
+      <link href="https://dhsimpson.github.io/paperimpl_sample" rel="alternate" type="text/html" title="논문 구현 샘플" />
       <published>1863-11-28T00:16:00+09:00</published>
       <updated>1863-11-28T00:16:00+09:00</updated>
-      <id>http://localhost:4000/paperimpl_sample</id>
-      <content type="html" xml:base="http://localhost:4000/paperimpl_sample">&lt;p&gt;이 글은 python basic 입니다.!!&lt;/p&gt;</content>
+      <id>https://dhsimpson.github.io/paperimpl_sample</id>
+      <content type="html" xml:base="https://dhsimpson.github.io/paperimpl_sample">&lt;p&gt;이 글은 python basic 입니다.!!&lt;/p&gt;</content>
 
       
       
