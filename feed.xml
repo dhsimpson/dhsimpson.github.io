@@ -1,4 +1,105 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="https://dhsimpson.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://dhsimpson.github.io/" rel="alternate" type="text/html" /><updated>2020-12-01T15:04:49+09:00</updated><id>https://dhsimpson.github.io/</id><title type="html">DL&amp;amp;NLP</title><subtitle>딥러닝과 NLP 논문 공부, 구현 블로그</subtitle><entry><title type="html">논문 리뷰 샘플</title><link href="https://dhsimpson.github.io/paperrev_sample" rel="alternate" type="text/html" title="논문 리뷰 샘플" /><published>1863-11-28T00:16:00+09:00</published><updated>1863-11-28T00:16:00+09:00</updated><id>https://dhsimpson.github.io/paperrev_sample</id><content type="html" xml:base="https://dhsimpson.github.io/paperrev_sample">&lt;p&gt;이글은 샘플 입니다.&lt;/p&gt;</content><author><name>DongHee Youn</name></author><category term="PaperReview" /><summary type="html">이글은 샘플 입니다.</summary></entry><entry><title type="html">논문 구현 샘플</title><link href="https://dhsimpson.github.io/paperimpl_sample" rel="alternate" type="text/html" title="논문 구현 샘플" /><published>1863-11-28T00:16:00+09:00</published><updated>1863-11-28T00:16:00+09:00</updated><id>https://dhsimpson.github.io/paperimpl_sample</id><content type="html" xml:base="https://dhsimpson.github.io/paperimpl_sample">&lt;p&gt;이 글은 python basic 입니다.!!&lt;/p&gt;</content><author><name>DongHee Youn</name></author><category term="PaperImplement" /><summary type="html">이 글은 python basic 입니다.!!</summary></entry><entry><title type="html">자연어 처리 기본 - 콜세라 강의 1주차 1리뷰</title><link href="https://dhsimpson.github.io/nlp_coursera_seq_week1_1" rel="alternate" type="text/html" title="자연어 처리 기본 - 콜세라 강의 1주차 1리뷰" /><published>1863-11-28T00:10:00+09:00</published><updated>1863-11-28T00:10:00+09:00</updated><id>https://dhsimpson.github.io/nlp_coursera_seq_week1_1</id><content type="html" xml:base="https://dhsimpson.github.io/nlp_coursera_seq_week1_1">&lt;h2 id=&quot;배경-지식이-있는-상태에서-수업을-들으면-더-잘-이해가-되지-않을까-싶어-요약본을-만들어-봤습니다&quot;&gt;배경 지식이 있는 상태에서 수업을 들으면 더 잘 이해가 되지 않을까 싶어 요약본을 만들어 봤습니다.&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="https://dhsimpson.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://dhsimpson.github.io/" rel="alternate" type="text/html" /><updated>2020-12-04T14:33:35+09:00</updated><id>https://dhsimpson.github.io/</id><title type="html">DL&amp;amp;NLP</title><subtitle>딥러닝과 NLP 논문 공부, 구현 블로그</subtitle><entry><title type="html">자연어 처리 기본 - 콜세라 강의 Lecture 5 2주차</title><link href="https://dhsimpson.github.io/nlp_coursera_seq_week2" rel="alternate" type="text/html" title="자연어 처리 기본 - 콜세라 강의 Lecture 5 2주차" /><published>1863-12-05T00:10:00+09:00</published><updated>1863-12-05T00:10:00+09:00</updated><id>https://dhsimpson.github.io/nlp_coursera_seq_week2</id><content type="html" xml:base="https://dhsimpson.github.io/nlp_coursera_seq_week2">&lt;h1 id=&quot;2주차-강의에선-nlp에서의-데이터-벡터-표현-방식-중-하나인-word-embedding-에-대해-배웁니다-one-hot과-비교해서-1주차에서-설명한-적이-있었죠&quot;&gt;2주차 강의에선 NLP에서의 데이터-&amp;gt;벡터 표현 방식 중 하나인 Word Embedding 에 대해 배웁니다. (One-Hot과 비교해서 1주차에서 설명한 적이 있었죠?)&lt;/h1&gt;
+
+&lt;h1 id=&quot;1word-representation&quot;&gt;1.Word Representation&lt;/h1&gt;
+&lt;p&gt;이번 강의에선 딥 러닝에선 Text 데이터를 어떤 표현으로 전달하는지, 데이터 표현으로 무엇이 가능한지 배웁니다.   &lt;br /&gt;
+C.F.) NLP 영역에서, Corpus, Corpora 라는 단어가 자주 등장합니다.&lt;/p&gt;
+
+&lt;p&gt;한국어로 ‘말뭉치’ 라고 하며, 모델 학습에 사용되는 Text 데이터 전체를 통틀어 ‘말뭉치’ 라고 표현합니다.&lt;/p&gt;
+&lt;details&gt;
+  &lt;summary&gt;자세히/간단히&lt;/summary&gt;
+  &lt;p&gt;1주차 강의에선 Text data를 단어/Char 단위로 토큰화(나눈) 한 뒤에 one-hot 벡터로 치환하해 input data로 이용했었습니다.&lt;/p&gt;
+
+  &lt;p&gt;하지만 One-Hot 벡터는 단어 자체/단어 사이의 특징&amp;amp;관계를 표현할 수 없습니다.&lt;/p&gt;
+
+  &lt;p&gt;단어 자체/단어 사이의 특징&amp;amp;관계를 표현하기 위해 사용되는 것이 Word Embedding 입니다.&lt;/p&gt;
+
+  &lt;p&gt;Word Embedding은 토큰을 정해진 차원(하이퍼 파라미터)에 대응시키는 방식입니다.&lt;/p&gt;
+
+  &lt;p&gt;Look-Up Table처럼 사용됩니다 =&amp;gt; Embedding Matrix 로 부터 원하는 단어의 토큰 인덱스에 해당하는 row 전체를 가져오는 방식.&lt;/p&gt;
+
+  &lt;p&gt;c.f.) Embedding Matrix는 토큰이 Word Embedding 된 것을 행 단위로 쌓아 만든 행렬입니다.    &lt;br /&gt;
+c.f.) 즉, Embedding Matrix의 행 수는 vocabulary의 크기와 같습니다. Word Embedding 벡터는 딥러닝을 통해 구합니다.&lt;/p&gt;
+
+  &lt;p&gt;ex)단어 vocabulary의 i 번째 토큰에 해당하는 Word Embedding vector를 이용하려면 Embedding Matrix의 i 번째 row 전체를 가져와 사용하면 되겠죠.&lt;/p&gt;
+&lt;/details&gt;
+
+&lt;h1 id=&quot;2using-word-embeddings&quot;&gt;2.Using word embeddings&lt;/h1&gt;
+&lt;p&gt;이번 강의에선 Word Embedding 을 실제 딥러닝에서 어떻게 사용하는지 배웁니다.&lt;/p&gt;
+&lt;details&gt;
+  &lt;summary&gt;자세히/간단히&lt;/summary&gt;
+  &lt;p&gt;단순합니다. RNN 모델 데이터 input할 때, 모델 앞에 Embedding Matrix를 놓기만 하면 됩니다.&lt;/p&gt;
+
+  &lt;p&gt;input 토큰의 vocabulary에서의 index를 이용해 Embedding Matrix로 부터 벡터를 가져와 RNN 모델에 집어넣는 것이죠.&lt;/p&gt;
+
+  &lt;p&gt;Embedding Matrix의 각 벡터(row)는 딥러닝을 이용해 구합니다. 실제론 벡터 하나하나를 각자 구하는 것이 아니라 Embedding Matrix를 학습시키는 것이죠.&lt;/p&gt;
+
+  &lt;p&gt;NLP Task에서 Embedding Matrix를 사용할 때, 이미 학습 된 Embedding Matrix를 이용하는 것이므로 Transfer Learning 이라고도 할 수 있겠습니다.&lt;/p&gt;
+
+  &lt;p&gt;c.f.) 상황에 따라 학습 안 된 Embedding Matrix를 학습 단계에서 학습시키는 경우도 있습니다.&lt;/p&gt;
+&lt;/details&gt;
+
+&lt;h1 id=&quot;3properties-of-word-embeddings&quot;&gt;3.Properties of word embeddings&lt;/h1&gt;
+&lt;p&gt;이번 강의에선 Embedding 된 토큰(단어) 벡터 간에 사칙연산을 적용했을 때 어떤 결과를 얻을 수 있을지 수업합니다.     &lt;br /&gt;
+(즉, Word Embedding이 토큰 간의 관계를 표현할 수 있는지를 보여주죠.)&lt;/p&gt;
+
+&lt;h1 id=&quot;4embedding-matrix&quot;&gt;4.Embedding matrix&lt;/h1&gt;
+&lt;p&gt;Embedding matrix 에 대해, 어떻게 사용하는지 설명합니다.   &lt;br /&gt;
+(제가 위에선 Embedding Matrix의 각 행이 토큰의 Embedding 벡터라 했는데, Andrew ng 교수님은 각 열을 토큰의 Embedding 벡터라 하셨습니다.)&lt;/p&gt;
+
+&lt;p&gt;수업에서 처럼 one-hot 벡터를 곱해(vocabulary 크기300, i 번째 토큰이라면 i 번째 벡터만 1이고 나머지는 0인 크기 300짜리 벡터)   &lt;br /&gt;
+Embedding 벡터를 가져오는 방법도 있고, 만약 개발자가 더 빠른 Look-up(Embedding Matrix에서 벡터 가져오기)방법을 갖고 있다면    &lt;br /&gt;
+ 그 방법을 사용할 것입니다.&lt;/p&gt;
+
+&lt;h1 id=&quot;5learning-word-embeddings&quot;&gt;5.Learning word embeddings&lt;/h1&gt;
+&lt;p&gt;이번 강의에선 Embedding Matrix를 학습시키는 방법에 대해 소개합니다.&lt;/p&gt;
+
+&lt;p&gt;다음 단어 예측하는 학습 모델을 이용해 (Language Model) 학습시킬 수도 있고     &lt;br /&gt;
+가운데 단어의 좌우 k개 단어(k는 윈도우 크기)로 부터 가운데 단어를 예측하는 모델을 이용할(&lt;a href=&quot;https://wikidocs.net/22660&quot;&gt;Word2Vec : CBOW&lt;/a&gt;) 수도 있고    &lt;br /&gt;
+가운데 단어로 부터 좌우 k개 단어(k는 윈도우 크기)를 예측하는 모델을 이용할(&lt;a href=&quot;https://wikidocs.net/22660&quot;&gt;Word2Vec : Skip-Gram&lt;/a&gt;)) 수도 있습니다.&lt;/p&gt;
+
+&lt;p&gt;그 외에도 여러가지 방법이 있으며 각각의 장단점이 있습니다.&lt;/p&gt;
+
+&lt;p&gt;수업에선 Word2Vec, Negative Sampling, GloVe를 다룹니다.&lt;/p&gt;
+
+&lt;h1 id=&quot;6word2vec&quot;&gt;6.Word2Vec&lt;/h1&gt;
+&lt;p&gt;이번 강의에선 Word2Vec에 대해 설명하며, 그 중 하나의 방법인 Skip-Gram (가운데 단어로 주변 단어 예측)에 대해 배웁니다.     &lt;br /&gt;
+Word2Vec에 대해 더 자세히 알아보고 싶으시다면 아래 링크를 들어가 주세요.      &lt;br /&gt;
+&lt;a href=&quot;https://wikidocs.net/22660&quot;&gt;Word2Vec&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;7negative-sampling&quot;&gt;7.Negative Sampling&lt;/h1&gt;
+&lt;p&gt;이번 강의에선 Skip Gram의 학습 속도를 빠르게 하기 위한 방법인 Negative Sampling(SGNS = Skip-Gram with Negative Sampling) 에 대해 배웁니다.&lt;/p&gt;
+
+&lt;p&gt;Negative Sampling은 이진 분류 문제를 이용합니다.&lt;/p&gt;
+
+&lt;p&gt;중심 단어와 관련 있는 주변 단어는 1로, 아닌 단어는 0으로 라벨링 한 후 학습시킵니다.&lt;/p&gt;
+
+&lt;p&gt;구조의 차이만 본다면 출력 단의 activation function을 softmax 에서 sigmoid로 변경하고 있습니다.&lt;/p&gt;
+
+&lt;p&gt;(자세한 내용은 수업을 들어주세요!)&lt;/p&gt;
+
+&lt;h1 id=&quot;8glove-word-vectors&quot;&gt;8.GloVe word vectors&lt;/h1&gt;
+&lt;p&gt;Word2Vec 만큼 많이 사용하는 방법입니다.&lt;/p&gt;
+
+&lt;p&gt;GloVe는 동시 등장 확률을 이용합니다.&lt;/p&gt;
+
+&lt;p&gt;동시 등장 확률이란 전체 코퍼스를 크기 N인 윈도우를 움직여 검사하면서 각 단어 쌍이 얼마나 자주 등장하는지 구해 동시 등장 행렬에 정리한 뒤       &lt;br /&gt;
+동시 등장 확률 P(k|i) 를 구할 때 동시 등장 행렬에서 단어 i의 전체 등장 횟수를 구하고,     &lt;br /&gt;
+ i가 등장한 횟수 중 k가 등장한 횟수가 얼마인지 구해 조건부 확률을 계산합니다.&lt;/p&gt;
+
+&lt;h1 id=&quot;9sentiment-classification&quot;&gt;9.Sentiment Classification&lt;/h1&gt;
+&lt;p&gt;이번 강의에선 Word Embedding을 이용해 ‘감성 분류’ 문제를 해결하는 수업을 합니다.      &lt;br /&gt;
+RNN 모델 input 부분에 Word2Vec이나 GloVe 등의 방법으로 학습 된 Embedding Matrix를 추가하는 것 뿐입니다.&lt;/p&gt;
+
+&lt;h1 id=&quot;10debiasing-word-embeddings&quot;&gt;10.Debiasing word embeddings&lt;/h1&gt;
+&lt;p&gt;이번 강의에선 Word Embedding에서 발생할 수 있는 단어 간의 편향을 해결하는 방법을 배웁니다.    &lt;br /&gt;
+3 단계로 설명합니다.(자세히 이해하진 못했네요 ㅠㅠ 영어듣기 잘하시는 분들 코멘트 달아주세요 ㅠㅠ)&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;ol&gt;
+    &lt;li&gt;편향이 나타난 벡터의 방향을 알아내기&lt;/li&gt;
+    &lt;li&gt;편향을 제거하기 위해 편향이 나타난 축으로 Project 시키기&lt;/li&gt;
+    &lt;li&gt;편향이 나타나지 않았던 벡터들을 이동시켜 편향이 나타난 축을 기준으로 벡터 쌍들이(boy-girl, grandma-grandfa) 같은 거리 갖도록 하기&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/blockquote&gt;</content><author><name>DongHee Youn</name></author><category term="NlpBasics" /><summary type="html">2주차 강의에선 NLP에서의 데이터-&amp;gt;벡터 표현 방식 중 하나인 Word Embedding 에 대해 배웁니다. (One-Hot과 비교해서 1주차에서 설명한 적이 있었죠?)</summary></entry><entry><title type="html">논문 리뷰 샘플</title><link href="https://dhsimpson.github.io/paperrev_sample" rel="alternate" type="text/html" title="논문 리뷰 샘플" /><published>1863-11-28T00:16:00+09:00</published><updated>1863-11-28T00:16:00+09:00</updated><id>https://dhsimpson.github.io/paperrev_sample</id><content type="html" xml:base="https://dhsimpson.github.io/paperrev_sample">&lt;p&gt;이글은 샘플 입니다.&lt;/p&gt;</content><author><name>DongHee Youn</name></author><category term="PaperReview" /><summary type="html">이글은 샘플 입니다.</summary></entry><entry><title type="html">논문 구현 샘플</title><link href="https://dhsimpson.github.io/paperimpl_sample" rel="alternate" type="text/html" title="논문 구현 샘플" /><published>1863-11-28T00:16:00+09:00</published><updated>1863-11-28T00:16:00+09:00</updated><id>https://dhsimpson.github.io/paperimpl_sample</id><content type="html" xml:base="https://dhsimpson.github.io/paperimpl_sample">&lt;p&gt;이 글은 python basic 입니다.!!&lt;/p&gt;</content><author><name>DongHee Youn</name></author><category term="PaperImplement" /><summary type="html">이 글은 python basic 입니다.!!</summary></entry><entry><title type="html">자연어 처리 기본 - 콜세라 강의 Lecture 5 1주차</title><link href="https://dhsimpson.github.io/nlp_coursera_seq_week1" rel="alternate" type="text/html" title="자연어 처리 기본 - 콜세라 강의 Lecture 5 1주차" /><published>1863-11-28T00:10:00+09:00</published><updated>1863-11-28T00:10:00+09:00</updated><id>https://dhsimpson.github.io/nlp_coursera_seq_week1</id><content type="html" xml:base="https://dhsimpson.github.io/nlp_coursera_seq_week1">&lt;h2 id=&quot;배경-지식이-있는-상태에서-수업을-들으면-더-잘-이해가-되지-않을까-싶어-요약본을-만들어-봤습니다&quot;&gt;배경 지식이 있는 상태에서 수업을 들으면 더 잘 이해가 되지 않을까 싶어 요약본을 만들어 봤습니다.&lt;/h2&gt;
 
 &lt;h2 id=&quot;강의-특징에-따라--이-강의에선-무엇을-배웁니다-만-설명할-수도-혹은-해당-강의-내용-일부분전체를-설명할-수도-있습니다&quot;&gt;강의 특징에 따라 ‘ 이 강의에선 무엇을 배웁니다’ 만 설명할 수도, 혹은 해당 강의 내용 일부분/전체를 설명할 수도 있습니다.&lt;/h2&gt;
 
