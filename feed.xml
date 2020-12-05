@@ -1,4 +1,119 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="https://dhsimpson.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://dhsimpson.github.io/" rel="alternate" type="text/html" /><updated>2020-12-04T14:33:35+09:00</updated><id>https://dhsimpson.github.io/</id><title type="html">DL&amp;amp;NLP</title><subtitle>딥러닝과 NLP 논문 공부, 구현 블로그</subtitle><entry><title type="html">자연어 처리 기본 - 콜세라 강의 Lecture 5 2주차</title><link href="https://dhsimpson.github.io/nlp_coursera_seq_week2" rel="alternate" type="text/html" title="자연어 처리 기본 - 콜세라 강의 Lecture 5 2주차" /><published>1863-12-05T00:10:00+09:00</published><updated>1863-12-05T00:10:00+09:00</updated><id>https://dhsimpson.github.io/nlp_coursera_seq_week2</id><content type="html" xml:base="https://dhsimpson.github.io/nlp_coursera_seq_week2">&lt;h1 id=&quot;2주차-강의에선-nlp에서의-데이터-벡터-표현-방식-중-하나인-word-embedding-에-대해-배웁니다-one-hot과-비교해서-1주차에서-설명한-적이-있었죠&quot;&gt;2주차 강의에선 NLP에서의 데이터-&amp;gt;벡터 표현 방식 중 하나인 Word Embedding 에 대해 배웁니다. (One-Hot과 비교해서 1주차에서 설명한 적이 있었죠?)&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="https://dhsimpson.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://dhsimpson.github.io/" rel="alternate" type="text/html" /><updated>2020-12-06T03:48:49+09:00</updated><id>https://dhsimpson.github.io/</id><title type="html">DL&amp;amp;NLP</title><subtitle>딥러닝과 NLP 논문 공부, 구현 블로그</subtitle><entry><title type="html">자연어 처리 기본 - 콜세라 강의 Lecture 5 3주차</title><link href="https://dhsimpson.github.io/nlp_coursera_seq_week3" rel="alternate" type="text/html" title="자연어 처리 기본 - 콜세라 강의 Lecture 5 3주차" /><published>1863-12-06T00:10:00+09:00</published><updated>1863-12-06T00:10:00+09:00</updated><id>https://dhsimpson.github.io/nlp_coursera_seq_week3</id><content type="html" xml:base="https://dhsimpson.github.io/nlp_coursera_seq_week3">&lt;h1 id=&quot;마지막-주차-강의에서는시퀀스-모델의-예시로-번역-모델-음성-인식-모델에-대해-배웁니다&quot;&gt;마지막 주차 강의에서는…시퀀스 모델의 예시로 번역 모델, 음성 인식 모델에 대해 배웁니다.&lt;/h1&gt;
+
+&lt;h1 id=&quot;1basic-models&quot;&gt;1.Basic Models&lt;/h1&gt;
+&lt;p&gt;이번 강의에선 시퀀스 모델의 예로 ‘번역 모델’과 ‘Image Captioning(이미지 자막 달기 모델)’에 대해 다룹니다.&lt;/p&gt;
+
+&lt;details&gt;
+  &lt;summary&gt;자세히/간단히&lt;/summary&gt;
+
+  &lt;h2 id=&quot;sequence-to-sequence----&quot;&gt;1.’번역 모델’ 은 sequence to sequence 모델로 구현합니다.(그림과 함께 봐주세요)&lt;/h2&gt;
+  &lt;p&gt;&lt;img src=&quot;assets/built/images/coursera_week3/coursera_week3_1_seq2seq.png&quot; alt=&quot;&quot; /&gt;
+총 2 개의 RNN cell로 만들 수 있습니다. input Data를 받아 context vector(=hidden state)를 반환하는 Encoder Cell과      &lt;br /&gt;
+context vector를 받아 time step마다 번역 토큰을 예측하는 Decoder Cell로 이뤄져 있습니다.&lt;/p&gt;
+
+  &lt;p&gt;Decoder Cell의 입력으로, 시작하는 time step인 1번 째 에는 문장의 시작을 뜻하는 스페셜 토큰 &amp;lt;SOS&amp;gt; (Start of sentence)를 입력합니다.&lt;/p&gt;
+
+  &lt;p&gt;만약 y&lt;sup&gt;k&lt;/sup&gt; 번 째 예측 토큰이 문장의 마지막을 뜻하는 스페셜 토큰 &amp;lt;EOS&amp;gt; (End of sentence)라면 예측을 종료합니다.&lt;/p&gt;
+
+  &lt;h2 id=&quot;image-captioning---rnn----&quot;&gt;2.’Image Captioning 모델’은 단일 RNN 모델로 구현합니다.(그림과 함께 봐주세요)&lt;/h2&gt;
+  &lt;p&gt;&lt;img src=&quot;assets/built/images/coursera_week3/coursera_week3_1_imagecaptioning.png&quot; alt=&quot;&quot; /&gt;
+Text Data를 input할 때, Word Embedding 혹은 One-Hot Encodding을 통해 입력 토큰을 1차원 벡터로 변환해 RNN Cell에 Feed 시켰었습니다.&lt;/p&gt;
+
+  &lt;p&gt;Image Data는 input을 어떻게 할까요? 64x64x3 데이터를 통째로 넣을까요??    &lt;br /&gt;
+이 방법은 RNN Cell혼자 이미지의 특성도 파악하고 Text를 예측도 예측하는 일 까지 해야 하므로 모델에게 버거운 일입니다.&lt;/p&gt;
+
+  &lt;p&gt;물론 그 방법도 불가능한 것은 아니지만 더 좋은 방법이 있습니다.    &lt;br /&gt;
+바로 이미지의 특징 벡터를 input data로 이용하는 것이죠.&lt;/p&gt;
+
+  &lt;p&gt;Pretrained 된 이미지 예측 모델의 맨 마지막 Layer를 떼고 해당 모델을 이용합니다.   &lt;br /&gt;
+이제 이미지 예측 모델은 이미지의 특징 vector를 반환하는 모델이 됐습니다.(그림에선 크기 4096 벡터)&lt;/p&gt;
+
+  &lt;p&gt;이미지를 이미지 모델에 input 하고 결과로 나온 activation 된 1차원 벡터를(크기 4096) RNN Cell에 input data로 넣습니다.&lt;/p&gt;
+
+  &lt;p&gt;그 다음 1번 째 hidden state(크기 4096 벡터)를 다음 time step의 input data로 전달합니다.&lt;/p&gt;
+
+  &lt;p&gt;각 time step 마다 softmax로 토큰을 예측합니다.&lt;/p&gt;
+
+  &lt;p&gt;y&lt;sup&gt;k&lt;/sup&gt; 번 째 예측 토큰이 &amp;lt;EOS&amp;gt; 라면 Image Captioning을 끝냅니다.&lt;/p&gt;
+
+&lt;/details&gt;
+
+&lt;h1 id=&quot;2picking-the-most-likely-sentence&quot;&gt;2.Picking the most likely sentence&lt;/h1&gt;
+&lt;p&gt;이번 강의에선 ‘기계번역’ 할 때 가장 알맞은 예측을 하는 방법이 무엇인지 배웁니다.&lt;/p&gt;
+
+&lt;details&gt;
+  &lt;summary&gt;자세히/간단히&lt;/summary&gt;
+  &lt;p&gt;기계 번역 모델을 학습시킬 땐 P(y&lt;sup&gt;1&lt;/sup&gt;,y&lt;sup&gt;2&lt;/sup&gt;,….,y&lt;sup&gt;Ty&lt;/sup&gt; | x) 가 최대가 되도록 학습시킵니다.    &lt;br /&gt;
+위 조건부 식이 무슨 말인고~~ 하니,    &lt;br /&gt;
+문장 x(== x&lt;sup&gt;1&lt;/sup&gt;,x&lt;sup&gt;2&lt;/sup&gt;,….,x&lt;sup&gt;Tx&lt;/sup&gt;)를 label인 y&lt;sup&gt;1&lt;/sup&gt;,y&lt;sup&gt;1&lt;/sup&gt;,….,y&lt;sup&gt;Ty&lt;/sup&gt; 로 예측할 확률을 최대로 높인다는 것입니다.&lt;/p&gt;
+
+  &lt;p&gt;강의에선 ‘Greedy(탐욕적)’ 방식이 좋지 않다고 합니다. 왜일까요?      &lt;br /&gt;
+Greedy 방식은 매 time step마다 최적의 다음 단어를 예측하는 데에 항상 ‘가장 높은 확률’ 인 단어 1개만 예측하도록 합니다.    &lt;br /&gt;
+그것이 잘못된 예측이라도 말이죠.&lt;/p&gt;
+
+  &lt;p&gt;강의 에서 든 것과 비슷한 예를 들어보겠습니다.&lt;/p&gt;
+
+  &lt;p&gt;k 번 째 time step의 예측 토큰이 ‘is’ 입니다.&lt;/p&gt;
+
+  &lt;p&gt;이 모델에서, ‘is’ 다음에 나올 단어 중 가장 높은 확률을 가진 단어는 ‘visiting’ 입니다.&lt;/p&gt;
+
+  &lt;p&gt;그렇다면 어떤 input의 경우에도 ‘is’ 다음으로 ‘visiting’ 토큰을 예측하게 됩니다.&lt;/p&gt;
+
+  &lt;p&gt;(c.f. 이전 hidden state에 따라 다른 토큰을 예측할 수도 있습니다.)&lt;/p&gt;
+&lt;/details&gt;
+
+&lt;h1 id=&quot;3beam-search&quot;&gt;3.Beam Search&lt;/h1&gt;
+&lt;p&gt;이번 강의에선 ‘기계번역’에서 사용하던 ‘Greedy Search’ 방식의 문제점을 해결한 Beam Search 알고리즘을 소개합니다.&lt;/p&gt;
+
+&lt;p&gt;‘Greedy’ 방식이 ‘다음에 나올 확률이 가장 높은 토큰 1개’ 만을 예측한다면,      &lt;br /&gt;
+‘Beam Search’ 방식은 ‘다음에 나올 확률이 가장 높은 토큰 B개’ 를 예측합니다.&lt;/p&gt;
+
+&lt;p&gt;B는 하이퍼파라미터 입니다.&lt;/p&gt;
+
+&lt;p&gt;‘Beam Search’ 는 단계가 진행될 수록 B가 클 수록 시간과 메모리가 많이 차지하게 되는 단점을 가집니다.&lt;/p&gt;
+
+&lt;h1 id=&quot;4refinements-to-beam-search&quot;&gt;4.Refinements to Beam Search&lt;/h1&gt;
+&lt;p&gt;이번 강의에선 ‘Beam Search’ 알고리즘을 개선하는 방법을 배웁니다.&lt;/p&gt;
+
+&lt;p&gt;Length normalization 방법(input/output 문장 길이가 제각각이기에 발생하는 문제를 해결)과   &lt;br /&gt;
+하이퍼 파라미터인 B(가장 확률이 높은 몇 개의 토큰을 선택할 것인가)를 어떻게 찾을 것인지 배웁니다.&lt;/p&gt;
+
+&lt;h1 id=&quot;5error-analysis-in-beam-search&quot;&gt;5.Error analysis in beam search&lt;/h1&gt;
+&lt;p&gt;이번 강의에선 Beam Search 알고리즘에서 발생한 오류의 분석을 어떻게 하는지 배웁니다.&lt;/p&gt;
+
+&lt;p&gt;기계 번역의 오류는 다음의 두 가지 이유로 발생합니다.&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;RNN 모델 때문에&lt;/li&gt;
+  &lt;li&gt;Beam Search 때문에     &lt;br /&gt;
+강의에선 둘 중 어떤 것이 기계 번역 오류의 원인인지 분석하는 프로세스를 배웁니다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;6bleu-score-optional&quot;&gt;6.Bleu Score (optional)&lt;/h1&gt;
+&lt;p&gt;이번 강의에선 기계번역 모델의 성능 측정법 중 하나인 BLEU score에 대해 배웁니다.&lt;/p&gt;
+
+&lt;p&gt;BLEU Score는 Label Data 번역본과 모델이 예측한 번역본을 비교해 두 문장이 얼마나 유사한지 점수를 매깁니다.&lt;/p&gt;
+
+&lt;h1 id=&quot;7-8attention-model-intuition&quot;&gt;7-8.Attention Model Intuition&lt;/h1&gt;
+&lt;p&gt;이번 강의에선 Attention Model에 대해 배웁니다.    &lt;br /&gt;
+Seq2Seq 모델인 Encoder Decoder 네트워크 구조에서,     &lt;br /&gt;
+Decoder Cell의 현재 time step이 Encoder Cell의 몇 번째 time step과 유사도가 높은지 알려주는 것입니다.&lt;/p&gt;
+
+&lt;p&gt;즉, 유사도가 높은 Encoder time step일 수록 해당 time step의 hidden state와 ‘Attention’ 시켜주는 것입니다.&lt;/p&gt;
+
+&lt;p&gt;Decoder Cell에서 토큰 예측에는 attention 연산을 해 준 결과를 사용합니다.&lt;/p&gt;
+
+&lt;h1 id=&quot;9speech-recognition&quot;&gt;9.Speech recognition&lt;/h1&gt;
+&lt;p&gt;이번 강의에선 ‘음성 인식’ Task 중 하나인 Speech to Text에 대해 다룹니다.&lt;/p&gt;
+
+&lt;p&gt;Speech to Text에 사용되는 기법 중 하나인 CTC 방법도 배웁니다.&lt;/p&gt;
+
+&lt;h1 id=&quot;10trigger-word-detection&quot;&gt;10.Trigger Word Detection&lt;/h1&gt;
+&lt;p&gt;이번 강의에선 ‘음성 인식’ Task 중 하나인 ‘Trigger Word Detection’ 에 대해 다룹니다.      &lt;br /&gt;
+인공지능 비서에게 ‘오케이 구글’ ‘하이 시리’ ‘하이 빅스비’ 라는 말을 했을 때, 인공지능 비서가 깨어납니다.      &lt;br /&gt;
+이때 ‘오케이 구글’ 같은 음성이 ‘Trigger Word’ 입니다.&lt;/p&gt;
+
+&lt;p&gt;input 으로 오디오 클립 데이터를, output으로 0or1 값을(sigmoid) 예측합니다.    &lt;br /&gt;
+1값이 연속으로 몇 회 이상 나오면 Trigger Word로 판단합니다.&lt;/p&gt;</content><author><name>DongHee Youn</name></author><category term="NlpBasics" /><summary type="html">마지막 주차 강의에서는…시퀀스 모델의 예시로 번역 모델, 음성 인식 모델에 대해 배웁니다.</summary></entry><entry><title type="html">자연어 처리 기본 - 콜세라 강의 Lecture 5 2주차</title><link href="https://dhsimpson.github.io/nlp_coursera_seq_week2" rel="alternate" type="text/html" title="자연어 처리 기본 - 콜세라 강의 Lecture 5 2주차" /><published>1863-12-05T00:10:00+09:00</published><updated>1863-12-05T00:10:00+09:00</updated><id>https://dhsimpson.github.io/nlp_coursera_seq_week2</id><content type="html" xml:base="https://dhsimpson.github.io/nlp_coursera_seq_week2">&lt;h1 id=&quot;2주차-강의에선-nlp에서의-데이터-벡터-표현-방식-중-하나인-word-embedding-에-대해-배웁니다-one-hot과-비교해서-1주차에서-설명한-적이-있었죠&quot;&gt;2주차 강의에선 NLP에서의 데이터-&amp;gt;벡터 표현 방식 중 하나인 Word Embedding 에 대해 배웁니다. (One-Hot과 비교해서 1주차에서 설명한 적이 있었죠?)&lt;/h1&gt;
 
 &lt;h1 id=&quot;1word-representation&quot;&gt;1.Word Representation&lt;/h1&gt;
 &lt;p&gt;이번 강의에선 딥 러닝에선 Text 데이터를 어떤 표현으로 전달하는지, 데이터 표현으로 무엇이 가능한지 배웁니다.   &lt;br /&gt;

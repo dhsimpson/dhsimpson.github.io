@@ -8,6 +8,21 @@
     
       
       <item>
+        <title>자연어 처리 기본 - 콜세라 강의 Lecture 5 3주차</title>
+        
+          <description>&lt;h1 id=&quot;마지막-주차-강의에서는시퀀스-모델의-예시로-번역-모델-음성-인식-모델에-대해-배웁니다&quot;&gt;마지막 주차 강의에서는…시퀀스 모델의 예시로 번역 모델, 음성 인식 모델에 대해 배웁니다.&lt;/h1&gt;
+
+</description>
+        
+        <pubDate>Sun, 06 Dec 1863 00:10:00 +0900</pubDate>
+        <link>
+        https://dhsimpson.github.io/nlp_coursera_seq_week3</link>
+        <guid isPermaLink="true">https://dhsimpson.github.io/nlp_coursera_seq_week3</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>자연어 처리 기본 - 콜세라 강의 Lecture 5 2주차</title>
         
           <description>&lt;h1 id=&quot;2주차-강의에선-nlp에서의-데이터-벡터-표현-방식-중-하나인-word-embedding-에-대해-배웁니다-one-hot과-비교해서-1주차에서-설명한-적이-있었죠&quot;&gt;2주차 강의에선 NLP에서의 데이터-&amp;gt;벡터 표현 방식 중 하나인 Word Embedding 에 대해 배웁니다. (One-Hot과 비교해서 1주차에서 설명한 적이 있었죠?)&lt;/h1&gt;
